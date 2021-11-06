@@ -22,3 +22,13 @@ test('should UPDATE_PRODUCTS', () => {
     expect(newState.products.length).toBe(2)
     expect(initialState.products.length).toBe(0) //inital state immutable
 })
+
+test('UPDATE_CATEGORIES', () => {
+    let newState = reducer(initialState, {
+      type: UPDATE_CATEGORIES,
+      categories: [{}, {}]
+    });
+  
+    expect(newState.categories.length).toBe(2);
+    expect(initialState.categories.length).toBe(1); //intial still be 1 categ
+  });
